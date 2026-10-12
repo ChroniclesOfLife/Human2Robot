@@ -4,7 +4,7 @@ Human2Robot chuyển demo con người thành hành động robot:
 RGB-D → điểm bàn tay/vật thể → ICT → Flow Matching → tư thế kẹp 6-DoF và đóng/mở kẹp.
 Trossen WidowX AI là ví dụ; robot khác cần adapter `RobotArm`, IK và hiệu chuẩn TCP/camera.
 
- có tác vụ **serve bread**: 868 khung hình train, 864 khung hình eval,
+Có tác vụ **serve bread**: 868 khung hình train, 864 khung hình eval,
 tách theo phiên ghi. Dữ liệu và checkpoint tham chiếu giữ nguyên hình học/trọng số;
 xem [nguồn và giấy phép](THIRD_PARTY_NOTICES.md).
 

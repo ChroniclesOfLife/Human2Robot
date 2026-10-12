@@ -1,0 +1,23 @@
+{
+  "task": "serve_bread",
+  "sessions": [
+    {
+      "session": "session_000",
+      "split": "evaluation",
+      "frame_count": 864,
+      "first_frame": "00128",
+      "last_frame": "00991",
+      "dataset_kind": "imported_processed_reference",
+      "geometry_unchanged": true
+    },
+    {
+      "session": "session_001",
+      "split": "training",
+      "frame_count": 868,
+      "first_frame": "00121",
+      "last_frame": "00988",
+      "dataset_kind": "imported_processed_reference",
+      "geometry_unchanged": true
+    }
+  ]
+}

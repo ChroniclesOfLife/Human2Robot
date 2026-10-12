@@ -1,0 +1,4 @@
+runs/serve_bread/pretrained/*.pt filter=lfs diff=lfs merge=lfs -text
+data/**/*.png filter=lfs diff=lfs merge=lfs -text
+assets/robots/**/*.usd filter=lfs diff=lfs merge=lfs -text
+*.npz filter=lfs diff=lfs merge=lfs -text

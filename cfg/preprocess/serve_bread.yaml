@@ -1,0 +1,19 @@
+# Use --config cfg/preprocess/serve_bread.yaml; CLI flags override these defaults.
+task: serve_bread
+camera_frame: fixed_camera
+depth_units: metres
+hand_backend: mediapipe
+hand_origin: pinch
+hand_confidence: 0.5
+# Download the hand_landmarker.task separately and pass --hand-model.
+object_backend: dinosam
+dino_model: IDEA-Research/grounding-dino-tiny
+sam2_config: configs/sam2/sam2_hiera_t.yaml
+box_threshold: 0.3
+inpaint: lama
+# Supply --lama-model; --allow-download is the explicit opt-in for model hubs.
+smoothing_alpha: 0.5
+min_depth: 0.1
+max_depth: 5.0
+mask_dilation: 4
+motion_threshold: 0.02

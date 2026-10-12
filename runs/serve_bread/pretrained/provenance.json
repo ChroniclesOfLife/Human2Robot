@@ -1,0 +1,11 @@
+{
+  "kind": "imported_pretrained_model",
+  "epoch": 400,
+  "global_step": 11200,
+  "model_tensor_count": 129,
+  "all_model_tensors_identical_after_export": true,
+  "optimizer_state_included": false,
+  "source_checkpoint_sha256": "b8d76c22c58fac90f4c281d46dec44148aabc7f5855dddf9fa01ec9f2a133681",
+  "exported_checkpoint_sha256": "470cb72a7909efcc1e9cd791399bb8e25fbcc85db990c71996d27bbe09870eee",
+  "changes": "Portable metadata and image filename; model tensors unchanged."
+}

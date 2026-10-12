@@ -1,0 +1,15 @@
+# Python 3.10/3.11; inference and training on the supplied processed dataset.
+torch==2.5.1
+torchvision==0.20.1
+numpy==2.2.6
+scipy==1.15.3
+opencv-python==4.11.0.86
+Pillow==12.3.0
+PyYAML==6.0.3
+python-box==7.4.1
+rich==15.0.0
+imageio==2.38.0
+imageio-ffmpeg==0.6.0
+matplotlib==3.10.9
+tqdm==4.67.1
+pytest==8.4.2

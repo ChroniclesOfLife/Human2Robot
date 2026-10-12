@@ -1,0 +1,29 @@
+{
+  "optimizer_steps": 1,
+  "train": {
+    "loss": 8.014500617980957,
+    "l_flow": 7.866602420806885,
+    "l_pos": 2.311028242111206,
+    "l_rot": 2.1358590126037598,
+    "l_g": 3.1185457706451416,
+    "l_done": 0.7394901514053345,
+    "l_foresight": 0.0,
+    "l_contrastive": 0.0,
+    "zero_ratio": [
+      0.0
+    ],
+    "zero_state_ratio": 0.0,
+    "lr": 5e-07
+  },
+  "heldout": {
+    "heldout_loss": 7.941845893859863,
+    "batches": 1,
+    "samples": 2
+  },
+  "train_sessions": [
+    "data/serve_bread/demos/session_001"
+  ],
+  "eval_sessions": [
+    "data/serve_bread/demos/session_000"
+  ]
+}

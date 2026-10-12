@@ -1,0 +1,6 @@
+# Optional learned perception; these weights are separate from the policy.
+# Install the base requirements first. MediaPipe/HaMeR remain optional adapters.
+transformers==4.57.6
+sam2==1.1.0
+onnxruntime-gpu==1.23.2
+huggingface-hub>=0.34,<1

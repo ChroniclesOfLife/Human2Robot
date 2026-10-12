@@ -1,0 +1,719 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (500, 0, 0)
+                double radius = 500
+            }
+            dictionary Perspective = {
+                double3 position = (0.10202982603948989, 1.2758398525817298, 2.6868050967141004)
+                double3 target = (0.027530446603940023, -1.2665735788050816, 0.9413942250092673)
+            }
+            dictionary Right = {
+                double3 position = (0, -500, 0)
+                double radius = 500
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 500)
+                double radius = 500
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "../scenes/kitchen_g_shape_edit.usd"
+            dictionary locked = {
+            }
+            dictionary muteness = {
+            }
+        }
+        dictionary renderSettings = {
+            double "rtx:directLighting:sampledLighting:maxRayUnexposedIntensity" = 6399.9990234375
+            int "rtx:externalFrameCounter" = 3
+            double "rtx:indirectDiffuse:maxRayUnexposedIntensity" = 6399.9990234375
+            double "rtx:pathtracing:fireflyFilter:maxPerEmissiveUnexposedIntensity" = 3199.99951171875
+            double "rtx:pathtracing:fireflyFilter:maxUnexposedIntensityPerSample" = 3199.99951171875
+            double "rtx:pathtracing:fireflyFilter:maxUnexposedIntensityPerSampleDiffuse" = 3199.99951171875
+            bool "rtx:post:histogram:enabled" = 1
+            double "rtx:raytracing:inscattering:maxRTSampleUnexposedIntensity" = 204799.96875
+            double "rtx:rtpt:fireflyFilter:maxPerEmissiveUnexposedIntensity" = 3199.99951171875
+            double "rtx:rtpt:fireflyFilter:maxUnexposedIntensityPerSample" = 3199.99951171875
+            double "rtx:rtpt:fireflyFilter:maxUnexposedIntensityPerSampleDiffuse" = 3199.99951171875
+            double "rtx:translucency:maxRayUnexposedIntensity" = 19199.998046875
+        }
+    }
+    defaultPrim = "World"
+    metersPerUnit = 1
+    subLayers = [
+        @../scenes/kitchen_g_shape_edit.usd@,
+        @https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.1/Isaac/Environments/replicator_kitchen/kitchen_g_shape.usda@
+    ]
+    upAxis = "Z"
+)
+
+over "Render"
+{
+    over "OmniverseKit"
+    {
+        over "HydraTextures"
+        {
+            over "omni_kit_widget_viewport_ViewportTexture_0"
+            {
+                rel camera = </OmniverseKit_Persp>
+                bool omni:rtx:material:db:syncLoads = 1
+                int omni:rtx:pt:clampSpp = 64
+                uint omni:rtx:pt:limits:maxBounces = 3
+                uint omni:rtx:pt:limits:maxGlossyBounces = 3
+                int omni:rtx:pt:samplesPerIteration = 64
+                uint omni:rtx:pt:samplesPerPixel = 64
+                bool omni:rtx:rt:ecoMode:enabled
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (1280, 720)
+            }
+
+            def RenderProduct "Human2Robot_RGB" (
+                prepend apiSchemas = ["OmniRtxSettingsCommonAdvancedAPI_1", "OmniRtxSettingsRtAdvancedAPI_1", "OmniRtxSettingsPtAdvancedAPI_1", "OmniRtxSettingsParticleFieldAPI_1", "OmniRtxPostColorGradingAPI_1", "OmniRtxPostChromaticAberrationAPI_1", "OmniRtxPostBloomPhysicalAPI_1", "OmniRtxPostMatteObjectAPI_1", "OmniRtxPostCompositingAPI_1", "OmniRtxPostDofAPI_1", "OmniRtxPostMotionBlurAPI_1", "OmniRtxPostTvNoiseAPI_1", "OmniRtxPostTonemapIrayReinhardAPI_1", "OmniRtxPostDebugSettingsAPI_1", "OmniRtxDebugSettingsAPI_1"]
+                hide_in_stage_window = true
+                no_delete = true
+            )
+            {
+                rel camera = </World/rsd455/RSD455/Camera_OmniVision_OV9782_Color>
+                token omni:rtx:ambientOcclusion:denoiserMode = "none"
+                token omni:rtx:background:source:texture:textureMode = "repeatMirrored"
+                token omni:rtx:background:source:type = "domeLight"
+                bool omni:rtx:debug:view:pixelDebug:enableFixedTextPos = 1
+                token omni:rtx:directLighting:sampledLighting:denoisingTechnique = "None"
+                bool omni:rtx:dlss:frameGeneration = 0
+                bool omni:rtx:indirectDiffuse:denoiser:enabled = 0
+                bool omni:rtx:material:db:syncLoads = 1
+                token omni:rtx:post:dlss:execMode = "performance"
+                bool omni:rtx:post:registeredCompositing:invertColorCorrection = 1
+                bool omni:rtx:post:registeredCompositing:invertToneMap = 1
+                bool omni:rtx:pt:adaptiveSampling:filterError = 0
+                uint omni:rtx:pt:adaptiveSampling:fixedSppIterations = 2
+                int omni:rtx:pt:clampSpp = 64
+                float omni:rtx:pt:fireflyFilter:maxPerEmissiveUnexposedIntensity = 3199.9995
+                float omni:rtx:pt:fireflyFilter:maxUnexposedIntensityPerSample = 3199.9995
+                float omni:rtx:pt:fireflyFilter:maxUnexposedIntensityPerSampleDiffuse = 3199.9995
+                uint omni:rtx:pt:limits:maxBounces = 3
+                uint omni:rtx:pt:limits:maxGlossyBounces = 3
+                uint omni:rtx:pt:maxSamplesPerLaunch = 2073600
+                uint omni:rtx:pt:mgpu:maxPixelsPerRegionExponent = 12
+                int omni:rtx:pt:samplesPerIteration = 64
+                uint omni:rtx:pt:samplesPerPixel = 64
+                bool omni:rtx:reflections:denoiser:enabled = 0
+                token omni:rtx:rendermode = "RealTimePathTracing"
+                color3f omni:rtx:rt:ambientLight:color = (0.1, 0.1, 0.1)
+                bool omni:rtx:rt:demoire = 0
+                float omni:rtx:rt:directLighting:maxRayUnexposedIntensity = 6399.999
+                bool omni:rtx:rt:ecoMode:enabled = 0
+                float omni:rtx:rt:indirectdiffuse:maxRayUnexposedIntensity = 6399.999
+                float omni:rtx:rt:inscattering:maxRTSampleUnexposedIntensity = 204799.97
+                bool omni:rtx:rt:lightcache:spatialCache:dontResolveConflicts = 1
+                float omni:rtx:rt:refractions:maxRayUnexposedIntensity = 19199.998
+                int omni:rtx:rt:sss:samples = 1
+                float omni:rtx:rtpt:fireflyFilter:maxPerEmissiveUnexposedIntensity = 3199.9995
+                float omni:rtx:rtpt:fireflyFilter:maxUnexposedIntensityPerSample = 3199.9995
+                float omni:rtx:rtpt:fireflyFilter:maxUnexposedIntensityPerSampleDiffuse = 3199.9995
+                uint omni:rtx:rtpt:maxVolumeBounces = 15
+                float omni:rtx:rtpt:modulatingRoughnessThreshold = 0.08
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                bool omni:rtx:scene:hydra:mdlMaterialWarmup = 1
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (1280, 720)
+            }
+
+            def RenderProduct "Human2Robot_Depth" (
+                prepend apiSchemas = ["OmniRtxSettingsCommonAdvancedAPI_1", "OmniRtxSettingsRtAdvancedAPI_1", "OmniRtxSettingsPtAdvancedAPI_1", "OmniRtxSettingsParticleFieldAPI_1", "OmniRtxPostColorGradingAPI_1", "OmniRtxPostChromaticAberrationAPI_1", "OmniRtxPostBloomPhysicalAPI_1", "OmniRtxPostMatteObjectAPI_1", "OmniRtxPostCompositingAPI_1", "OmniRtxPostDofAPI_1", "OmniRtxPostMotionBlurAPI_1", "OmniRtxPostTvNoiseAPI_1", "OmniRtxPostTonemapIrayReinhardAPI_1", "OmniRtxPostDebugSettingsAPI_1", "OmniRtxDebugSettingsAPI_1"]
+                hide_in_stage_window = true
+                no_delete = true
+            )
+            {
+                rel camera = </World/rsd455/RSD455/Camera_Pseudo_Depth>
+                token omni:rtx:ambientOcclusion:denoiserMode = "none"
+                token omni:rtx:background:source:texture:textureMode = "repeatMirrored"
+                token omni:rtx:background:source:type = "domeLight"
+                bool omni:rtx:debug:view:pixelDebug:enableFixedTextPos = 1
+                token omni:rtx:directLighting:sampledLighting:denoisingTechnique = "None"
+                bool omni:rtx:dlss:frameGeneration = 0
+                bool omni:rtx:indirectDiffuse:denoiser:enabled = 0
+                bool omni:rtx:material:db:syncLoads = 1
+                token omni:rtx:post:dlss:execMode = "performance"
+                bool omni:rtx:post:registeredCompositing:invertColorCorrection = 1
+                bool omni:rtx:post:registeredCompositing:invertToneMap = 1
+                bool omni:rtx:pt:adaptiveSampling:filterError = 0
+                uint omni:rtx:pt:adaptiveSampling:fixedSppIterations = 2
+                int omni:rtx:pt:clampSpp = 64
+                float omni:rtx:pt:fireflyFilter:maxPerEmissiveUnexposedIntensity = 3199.9995
+                float omni:rtx:pt:fireflyFilter:maxUnexposedIntensityPerSample = 3199.9995
+                float omni:rtx:pt:fireflyFilter:maxUnexposedIntensityPerSampleDiffuse = 3199.9995
+                uint omni:rtx:pt:limits:maxBounces = 3
+                uint omni:rtx:pt:limits:maxGlossyBounces = 3
+                uint omni:rtx:pt:maxSamplesPerLaunch = 2073600
+                uint omni:rtx:pt:mgpu:maxPixelsPerRegionExponent = 12
+                int omni:rtx:pt:samplesPerIteration = 64
+                uint omni:rtx:pt:samplesPerPixel = 64
+                bool omni:rtx:reflections:denoiser:enabled = 0
+                token omni:rtx:rendermode = "RealTimePathTracing"
+                color3f omni:rtx:rt:ambientLight:color = (0.1, 0.1, 0.1)
+                bool omni:rtx:rt:demoire = 0
+                float omni:rtx:rt:directLighting:maxRayUnexposedIntensity = 6399.999
+                bool omni:rtx:rt:ecoMode:enabled = 0
+                float omni:rtx:rt:indirectdiffuse:maxRayUnexposedIntensity = 6399.999
+                float omni:rtx:rt:inscattering:maxRTSampleUnexposedIntensity = 204799.97
+                bool omni:rtx:rt:lightcache:spatialCache:dontResolveConflicts = 1
+                float omni:rtx:rt:refractions:maxRayUnexposedIntensity = 19199.998
+                int omni:rtx:rt:sss:samples = 1
+                float omni:rtx:rtpt:fireflyFilter:maxPerEmissiveUnexposedIntensity = 3199.9995
+                float omni:rtx:rtpt:fireflyFilter:maxUnexposedIntensityPerSample = 3199.9995
+                float omni:rtx:rtpt:fireflyFilter:maxUnexposedIntensityPerSampleDiffuse = 3199.9995
+                uint omni:rtx:rtpt:maxVolumeBounces = 15
+                float omni:rtx:rtpt:modulatingRoughnessThreshold = 0.08
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                bool omni:rtx:scene:hydra:mdlMaterialWarmup = 1
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (1280, 720)
+            }
+        }
+    }
+
+    over "OmniverseGlobalRenderSettings"
+    {
+        rel products = [
+            </Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0>,
+            </Render/OmniverseKit/HydraTextures/Human2Robot_RGB>,
+            </Render/OmniverseKit/HydraTextures/Human2Robot_Depth>,
+        ]
+    }
+}
+
+over "OmniverseKit_Persp" (
+    prepend apiSchemas = ["OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+    customData = {
+        dictionary omni = {
+            dictionary kit = {
+                bool hide_in_stage_window = 1
+                bool no_delete = 1
+            }
+        }
+    }
+    hide_in_stage_window = true
+    kind = "component"
+    no_delete = true
+)
+{
+    float2 clippingRange = (1, 10000000)
+    float exposure:fStop = 5
+    float exposure:responsivity = 1.1026709
+    float exposure:time = 0.02
+    float focalLength = 18.147562
+    float focusDistance = 400
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -3.0847812442210176)
+    bool omni:rtx:autoExposure:enabled = 1
+    float3 xformOp:rotateXYZ = (55.5412, 4.8404067e-14, 178.32156)
+    float3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0.10202982603948989, 1.2758398525817298, 2.6868050967141004)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+}
+
+over "OmniverseKit_Front" (
+    prepend apiSchemas = ["OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+    customData = {
+        dictionary omni = {
+            dictionary kit = {
+                bool hide_in_stage_window = 1
+                bool no_delete = 1
+            }
+        }
+    }
+    hide_in_stage_window = true
+    kind = "component"
+    no_delete = true
+)
+{
+    float2 clippingRange = (1, 10000000)
+    float exposure:fStop = 5
+    float exposure:responsivity = 1.1026709
+    float exposure:time = 0.02
+    float horizontalAperture = 5000
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -500)
+    bool omni:rtx:autoExposure:enabled = 1
+    token projection = "orthographic"
+    float verticalAperture = 5000
+    float3 xformOp:rotateXYZ = (90, -1.2722219e-14, 90)
+    float3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (500, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+}
+
+over "OmniverseKit_Right" (
+    prepend apiSchemas = ["OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+    customData = {
+        dictionary omni = {
+            dictionary kit = {
+                bool hide_in_stage_window = 1
+                bool no_delete = 1
+            }
+        }
+    }
+    hide_in_stage_window = true
+    kind = "component"
+    no_delete = true
+)
+{
+    float2 clippingRange = (1, 10000000)
+    float exposure:fStop = 5
+    float exposure:responsivity = 1.1026709
+    float exposure:time = 0.02
+    float horizontalAperture = 5000
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -500)
+    bool omni:rtx:autoExposure:enabled = 1
+    token projection = "orthographic"
+    float verticalAperture = 5000
+    float3 xformOp:rotateXYZ = (90, -1.41245e-30, 1.2722219e-14)
+    float3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, -500, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+}
+
+over "OmniverseKit_Top" (
+    prepend apiSchemas = ["OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+    customData = {
+        dictionary omni = {
+            dictionary kit = {
+                bool hide_in_stage_window = 1
+                bool no_delete = 1
+            }
+        }
+    }
+    hide_in_stage_window = true
+    kind = "component"
+    no_delete = true
+)
+{
+    float2 clippingRange = (1, 10000000)
+    float exposure:fStop = 5
+    float exposure:responsivity = 1.1026709
+    float exposure:time = 0.02
+    float horizontalAperture = 5000
+    custom uniform vector3d omni:kit:centerOfInterest = (0, 0, -500)
+    bool omni:rtx:autoExposure:enabled = 1
+    token projection = "orthographic"
+    float verticalAperture = 5000
+    float3 xformOp:rotateXYZ = (-1.2722219e-14, -7.016709e-15, -90)
+    float3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, 0, 500)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+}
+
+over "World"
+{
+    over "rsd455"
+    {
+        quatf xformOp:orient = (0.98042583, 0.01160557, 0.18157816, 0.07523209)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (-0.7445360900852889, -0.8630271002155868, 1.4250036489510292)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "RSD455"
+        {
+            bool physics:kinematicEnabled = 1
+
+            over "Camera_Pseudo_Depth" (
+                prepend apiSchemas = ["OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+            )
+            {
+            }
+
+            over "Camera_OmniVision_OV9782_Color" (
+                prepend apiSchemas = ["OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+            )
+            {
+                quatd xformOp:orient = (0.47977577983732445, 0.5216095249826453, 0.5290923466349801, 0.4666904683633001)
+                double3 xformOp:scale = (1, 0.9999989867210388, 1)
+                double3 xformOp:translate = (6.661338147750939e-16, 0.011499999999999955, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            over "Camera_OmniVision_OV9782_Left" (
+                prepend apiSchemas = ["OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+            )
+            {
+            }
+
+            over "Camera_OmniVision_OV9782_Right" (
+                prepend apiSchemas = ["OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+            )
+            {
+            }
+        }
+    }
+
+    over "ur_gripper" (
+        active = false
+    )
+    {
+        over "joints"
+        {
+            over "shoulder_pan_joint"
+            {
+                float drive:angular:physics:targetPosition = -99.4035
+                bool[] isaac:actuator (
+                    displayName = "Actuator"
+                )
+                string isaac:NameOverride (
+                    displayName = "Joint Name Override"
+                )
+                token[] isaac:physics:DofOffsetOpOrder (
+                    displayName = "Dof Offset Op Order"
+                )
+                float state:angular:physics:position = -99.4035
+            }
+
+            over "shoulder_lift_joint"
+            {
+                float drive:angular:physics:targetPosition = -125.5435
+                float state:angular:physics:position = -125.5435
+            }
+
+            over "elbow_joint"
+            {
+                float drive:angular:physics:targetPosition = -75.5857
+                float state:angular:physics:position = -75.5857
+            }
+
+            over "wrist_1_joint"
+            {
+                float drive:angular:physics:targetPosition = -68.8836
+                float state:angular:physics:position = -68.8836
+            }
+
+            over "wrist_2_joint"
+            {
+                float drive:angular:physics:targetPosition = 89.9983
+                float state:angular:physics:position = 89.9983
+            }
+
+            over "wrist_3_joint"
+            {
+                float drive:angular:physics:targetPosition = -92.4668
+                float state:angular:physics:position = -92.4668
+            }
+        }
+
+        over "ee_link"
+        {
+            over "robotiq_arg2f_base_link"
+            {
+                over "visuals" (
+                    instanceable = false
+                )
+                {
+                }
+
+                over "collisions" (
+                    instanceable = false
+                )
+                {
+                    over "robotiq_arg2f_base_link"
+                    {
+                        over "mesh" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding:physics = </World/PhysicsMaterials/grasp_high_friction> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                            uniform token physics:approximation = "convexHull"
+                            bool physics:collisionEnabled = 1
+                        }
+                    }
+                }
+            }
+
+            over "left_outer_knuckle"
+            {
+                over "visuals" (
+                    instanceable = false
+                )
+                {
+                }
+
+                over "collisions" (
+                    instanceable = false
+                )
+                {
+                    over "robotiq_arg2f_140_outer_knuckle"
+                    {
+                        over "mesh" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding:physics = </World/PhysicsMaterials/grasp_high_friction> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                            uniform token physics:approximation = "convexHull"
+                            bool physics:collisionEnabled = 1
+                        }
+                    }
+
+                    over "robotiq_arg2f_140_outer_finger"
+                    {
+                        over "mesh" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding:physics = </World/PhysicsMaterials/grasp_high_friction> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                            uniform token physics:approximation = "convexHull"
+                            bool physics:collisionEnabled = 1
+                        }
+                    }
+                }
+            }
+
+            over "left_inner_finger"
+            {
+                over "visuals" (
+                    instanceable = false
+                )
+                {
+                }
+
+                over "collisions" (
+                    instanceable = false
+                )
+                {
+                    over "robotiq_arg2f_140_inner_finger"
+                    {
+                        over "mesh" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding:physics = </World/PhysicsMaterials/grasp_high_friction> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                            uniform token physics:approximation = "convexHull"
+                            bool physics:collisionEnabled = 1
+                        }
+                    }
+
+                    over "mesh_1"
+                    {
+                        over "box" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding:physics = </World/PhysicsMaterials/grasp_high_friction> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+            }
+
+            over "left_inner_knuckle"
+            {
+                over "visuals" (
+                    instanceable = false
+                )
+                {
+                }
+
+                over "collisions" (
+                    instanceable = false
+                )
+                {
+                    over "robotiq_arg2f_140_inner_knuckle"
+                    {
+                        over "mesh" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding:physics = </World/PhysicsMaterials/grasp_high_friction> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                            uniform token physics:approximation = "convexHull"
+                            bool physics:collisionEnabled = 1
+                        }
+                    }
+                }
+            }
+
+            over "right_inner_knuckle"
+            {
+                over "visuals" (
+                    instanceable = false
+                )
+                {
+                }
+
+                over "collisions" (
+                    instanceable = false
+                )
+                {
+                    over "robotiq_arg2f_140_inner_knuckle"
+                    {
+                        over "mesh" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding:physics = </World/PhysicsMaterials/grasp_high_friction> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                            uniform token physics:approximation = "convexHull"
+                            bool physics:collisionEnabled = 1
+                        }
+                    }
+                }
+            }
+
+            over "right_outer_knuckle"
+            {
+                over "visuals" (
+                    instanceable = false
+                )
+                {
+                }
+
+                over "collisions" (
+                    instanceable = false
+                )
+                {
+                    over "robotiq_arg2f_140_outer_knuckle"
+                    {
+                        over "mesh" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding:physics = </World/PhysicsMaterials/grasp_high_friction> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                            uniform token physics:approximation = "convexHull"
+                            bool physics:collisionEnabled = 1
+                        }
+                    }
+
+                    over "robotiq_arg2f_140_outer_finger"
+                    {
+                        over "mesh" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding:physics = </World/PhysicsMaterials/grasp_high_friction> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                            uniform token physics:approximation = "convexHull"
+                            bool physics:collisionEnabled = 1
+                        }
+                    }
+                }
+            }
+
+            over "right_inner_finger"
+            {
+                over "visuals" (
+                    instanceable = false
+                )
+                {
+                }
+
+                over "collisions" (
+                    instanceable = false
+                )
+                {
+                    over "robotiq_arg2f_140_inner_finger"
+                    {
+                        over "mesh" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding:physics = </World/PhysicsMaterials/grasp_high_friction> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                            uniform token physics:approximation = "convexHull"
+                            bool physics:collisionEnabled = 1
+                        }
+                    }
+
+                    over "mesh_1"
+                    {
+                        over "box" (
+                            prepend apiSchemas = ["MaterialBindingAPI"]
+                        )
+                        {
+                            rel material:binding:physics = </World/PhysicsMaterials/grasp_high_friction> (
+                                bindMaterialAs = "weakerThanDescendants"
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    over "objaverse_food_produce_baguette_v01_00"
+    {
+        over "Geometry"
+        {
+            over "objaverse_food_produce_baguette_v01_00" (
+                instanceable = false
+            )
+            {
+                over "VisualMaterials"
+                {
+                    over "opaque__organic__baguette_00" (
+                        instanceable = false
+                    )
+                    {
+                    }
+                }
+
+                over "objaverse_food_produce_baguette_v01_00_mesh" (
+                    prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI", "MaterialBindingAPI"]
+                )
+                {
+                    custom rel material:binding:physics = </World/PhysicsMaterials/grasp_high_friction> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    uniform token physics:approximation = "convexHull"
+                    bool physics:collisionEnabled = 1
+                }
+            }
+        }
+    }
+
+    def "PhysicsMaterials"
+    {
+        def Material "grasp_high_friction" (
+            prepend apiSchemas = ["PhysicsMaterialAPI", "PhysxMaterialAPI"]
+        )
+        {
+            float physics:dynamicFriction = 0.8
+            float physics:restitution = 0
+            float physics:staticFriction = 0.8
+            uniform token physxMaterial:frictionCombineMode = "max"
+            uniform token physxMaterial:restitutionCombineMode = "min"
+        }
+    }
+
+    def Xform "wxai_robot" (
+        prepend references = @./robots/wxai/wxai_follower.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.35, -0.8, 0.92, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+
+def PhysicsScene "PhysicsScene" (
+    prepend apiSchemas = ["NewtonSceneAPI", "PhysxSceneAPI"]
+)
+{
+}
+

@@ -1,0 +1,31 @@
+{
+  "project": "Human2Robot",
+  "inference_mode": "learned_flow_matching",
+  "checkpoint": "runs/serve_bread/pretrained/latest.pt",
+  "checkpoint_sha256": "470cb72a7909efcc1e9cd791399bb8e25fbcc85db990c71996d27bbe09870eee",
+  "frame": "data/serve_bread/demos/session_000/preprocess/all_data/00128",
+  "device": "cpu",
+  "num_inference_steps": 20,
+  "seed": 7,
+  "trajectory_frame": "camera_frame",
+  "done_probability": 0.16590601019401266,
+  "position_normalization": {
+    "mean": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "std": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "anchor_key": "obj1",
+  "checkpoint_loaded_strict": true,
+  "observation_mode": "recorded_demonstration",
+  "physical_execution": false,
+  "trajectory": "examples/learned_prediction.npz",
+  "epoch": 400,
+  "global_step": 11200
+}
